@@ -1,10 +1,12 @@
 package a2lib.uncharted;
 
 import a2lib.uncharted.banplus.bancommand;
+import a2lib.uncharted.banplus.BanListener;
 import a2lib.uncharted.tpa.tpaaccept;
 import a2lib.uncharted.tpa.tpacancel;
 import a2lib.uncharted.tpa.tpasend;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.command.PluginCommand;
 
@@ -25,6 +27,7 @@ public class a2lib extends JavaPlugin {
         registerCommand("tpa", new tpasend());
         registerCommand("tpaaccept", new tpaaccept());
         registerCommand("tpacancel", new tpacancel());
+        getServer().getPluginManager().registerEvents(new BanListener(this), this);
 
         getLogger().info("a2lib on");
     }
@@ -48,5 +51,8 @@ public class a2lib extends JavaPlugin {
             return;
         }
         command.setExecutor(executor);
+        if (executor instanceof TabCompleter) {
+            command.setTabCompleter((TabCompleter) executor);
+        }
     }
 }
