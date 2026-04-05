@@ -6,26 +6,10 @@ api-version: 1.13
 
 commands:
   banplus:
-    description: Main banplus command
-    usage: /banplus <tempban|tempmute|unban|unmute> ...
   tempban:
-    description: Temporarily ban a player
-    usage: /tempban <player> <time> <reason>
   tempmute:
-    description: Temporarily mute a player
-    usage: /tempmute <player> <time> <reason>
   unban:
-    description: Remove a player's temp ban
-    usage: /unban <player>
   unmute:
-    description: Remove a player's temp mute
-    usage: /unmute <player>
   tpa:
-    description: Send a teleport request to a player
-    usage: /tpa <player>
   tpaaccept:
-    description: Accept a teleport request
-    usage: /tpaaccept <player>
   tpacancel:
-    description: Deny a teleport request
-    usage: /tpacancel <player>
